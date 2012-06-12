@@ -1,0 +1,22 @@
+@(api: Api, categories: List[Category])
+
+@main("Welcome to Play 2.0") {
+	<h1>Edit api</h1>
+	<form method="POST" action="@routes.Application.edit_api_handle">
+		<input type="hidden" name="id" value="@api.id"/>
+    	<label>Api url :</label>
+    	<input type="text" name="url" value="@api.url"/>
+    	<br/>
+    	<label>Api description :</label>
+    	<input type="text" name="des" value="@api.des"/>
+    	<br/>
+    	<label>Category :</label>
+    	<select name="idCategory">
+    	@for(category <- categories){
+    		<option value="@category.id" @if(api.idCategory == category.id){ selected="true"} >@category.name</option>
+    	}
+    	</select>
+    	<br/>
+    	<input type="submit" name="submit"/>
+	</form>
+}

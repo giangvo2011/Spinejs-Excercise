@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /new_category			    controllers.Application.new_category
+
+POST    /new_category_handle      	controllers.Application.new_category_handle
+
+GET     /category			    	controllers.Application.category(id:String)
+
+GET     /edit_category			    controllers.Application.edit_category(id:String)
+
+POST    /edit_category_handle      	controllers.Application.edit_category_handle
+
+GET     /delete_category			controllers.Application.delete_category(id:String)
+
+GET     /new_api				    controllers.Application.new_api(idCategory:String)
+
+POST    /new_api_handle      		controllers.Application.new_api_handle
+
+GET     /api			    		controllers.Application.api(id:String)
+
+GET     /edit_api				    controllers.Application.edit_api(id:String)
+
+POST    /edit_api_handle      		controllers.Application.edit_api_handle
+
+GET     /delete_api					controllers.Application.delete_api(id:String)

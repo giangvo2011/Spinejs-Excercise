@@ -1,0 +1,21 @@
+@(idCategory:String, categories: List[Category])
+
+@main("Welcome to Play 2.0") {
+	<h1>New api</h1>
+	<form method="POST" action="@routes.Application.new_api_handle">
+    	<label>Api url :</label>
+    	<input type="text" name="url" value=""/>
+    	<br/>
+    	<label>Api description :</label>
+    	<input type="text" name="des" value=""/>
+    	<br/>
+    	<label>Category :</label>
+    	<select name="idCategory">
+    	@for(category <- categories){
+    		<option value="@category.id" @if(idCategory == category.id){ selected="true"} >@category.name</option>
+    	}
+    	</select>
+    	<br/>
+    	<input type="submit" name="submit"/>
+	</form>
+}

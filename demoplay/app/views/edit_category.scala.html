@@ -1,0 +1,12 @@
+@(category: Category)
+
+@main("Welcome to Play 2.0") {
+	<h1>Edit category</h1>
+	<form method="POST" action="@routes.Application.edit_category_handle">
+		<input type="hidden" name="id" value="@category.id"/>
+    	<label>Category name :</label>
+    	<input type="text" name="name" value="@category.name"/>
+    	<br/>
+    	<input type="submit" name="submit"/>
+	</form>
+}

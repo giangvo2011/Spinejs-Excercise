@@ -1,0 +1,17 @@
+@(categories: List[Category])
+
+@main("Welcome to Play 2.0") {
+	<h1>Categories</h1>
+	<ul>
+    @for(category <- categories){
+	  <li>
+	  	<a href="/category?id=@category.id">@category.name</a>
+	  	---
+	  	<a href="/edit_category?id=@category.id">edit</a>
+	  	---
+	  	<a href="/delete_category?id=@category.id">delete</a>
+	  </li>
+	}
+	</ul>
+	<a href="/new_category">new category</a>
+}

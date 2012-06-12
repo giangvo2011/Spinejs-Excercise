@@ -1,0 +1,17 @@
+@(category: Category, apis: List[Api])
+
+@main("Welcome to Play 2.0") {
+	<h1>@category.name - @category.updateDate</h1>
+	<ul>
+    @for(api <- apis){
+	  <li>
+	  	<a href="/api?id=@api.id">@api.url</a>
+	  	---
+	  	<a href="/edit_api?id=@api.id">edit</a>
+	  	---
+	  	<a href="/delete_api?id=@api.id">delete</a>
+	  </li>
+	}
+	</ul>
+	<a href="/new_api?idCategory=@category.id">new api</a>
+}

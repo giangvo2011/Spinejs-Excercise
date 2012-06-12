@@ -1,0 +1,11 @@
+
+
+@main("Welcome to Play 2.0") {
+	<h1>New category</h1>
+	<form method="POST" action="@routes.Application.new_category_handle">
+    	<label>Category name :</label>
+    	<input type="text" name="name" value=""/>
+    	<br/>
+    	<input type="submit" name="submit"/>
+	</form>
+}

@@ -1,0 +1,8 @@
+@(api: Api, category: Category)
+
+@main("Welcome to Play 2.0") {
+	<h1>@api.url - @api.updateDate</h1>
+	<label>Category : @category.name </label>
+	<br/>
+	<label>Description : @api.des </label>
+}
