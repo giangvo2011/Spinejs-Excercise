@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+<title>API</title>
+<link rel="stylesheet" href="css/first.css" type="text/css"
+	charset="utf-8">
+<script src="lib/json2.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
+<script src="lib/local.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="js/api.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/first.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/x-jquery-tmpl" id="categoryTemplate">
+   <div class="item {{if done}}done{{/if}}">
+    <div class="view" title="Double click to edit...">
+      <span class="category_name">${name}</span> <a class="destroy"></a> <img src="images/edit.png" class="edit"/> <button class="addApi">+</button>
+	  <div class = "editContent"></div>
+    </div>
+	<div class="edit_form">Edit Package:
+			<input class="input_edit" type="text" name="name" value="${name}"/>
+			<button class="savebtn">Save</button>
+	</div>
+	<div class="apis">
+		<div class="api_add_form">
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input class="input_name" type="text" name="name" value="${api_name}"/><br/></td>
+					</tr>
+					<tr>
+						<td>Description:</td>
+						<td><input class="input_desc" type="text" name="desc" value="${description}"/><br/></td>
+					</tr>
+				</table>
+				<button class="addbtn">Save</button>
+		</div>
+		<div class="api_items"></div>
+	</div>
+  </div>
+</script>
+<script type="text/x-jquery-tmpl" id="apiTemplate">
+   <div class="api">
+		<span>Name: ${api_name} </span> ----------
+		<span>Description: ${description}</span>
+		<span><button value=$(index) class="delApi">Del</button></span>
+  </div>
+</script>
+</head>
+<body>
+	<div id="views">
+		<div id="categories">
+			<h1>Categories</h1>
+
+			<form>
+				<input type="text" placeholder="What needs to be done?">
+			</form>
+
+			<div class="items"></div>
+		
+			<footer>
+				<a class="clear">Clear completed</a>
+				<div class="count">
+					<span class="countVal"></span> left
+				</div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
+
